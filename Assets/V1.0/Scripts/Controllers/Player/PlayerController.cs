@@ -18,4 +18,11 @@ public class PlayerController : MonoBehaviour
 
 		transform.position += movement * moveSpeed * Time.deltaTime;
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        IPickable ipickable = collision.GetComponent<IPickable>();
+		if (ipickable != null) Debug.Log("Component found!");
+		ipickable.Pick();
+    }
 }
