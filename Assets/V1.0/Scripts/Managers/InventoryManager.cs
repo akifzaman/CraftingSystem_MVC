@@ -5,9 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
     public int inventoryCapacity;
-    public List<Item> items = new List<Item>();
-    public Dictionary<string, List<Item>> itemsCount = new Dictionary<string, List<Item>>();
-
+    public Inventory inventory = new Inventory();
 
     #region Singleton
     public void Awake()
@@ -19,23 +17,16 @@ public class InventoryManager : MonoBehaviour
 
     public Item AddItemToInventory(Item item)
     {
-        if (items.Count < inventoryCapacity)
+        if (inventory.Items.Count >= inventoryCapacity) return item;
+        inventory.Items.Add(item);
+        if (!inventory.itemsCount.ContainsKey(item.itemName))
         {
-            items.Add(item);
-            if (!itemsCount.ContainsKey(item.itemName)) 
-            {
-                List<Item> newItemsList = new List<Item>();
-                newItemsList.Add(item);
-                itemsCount.Add(item.itemName , newItemsList);
-            } 
-            else itemsCount[item.itemName].Add(item);     
-            ShowItemCount(itemsCount);
+            List<Item> newItemsList = new List<Item>();
+            newItemsList.Add(item);
+            inventory.itemsCount.Add(item.itemName, newItemsList);
         }
-        else
-        {
-            Debug.Log("Inventory is full!");
-            return null;
-        }
+        else inventory.itemsCount[item.itemName].Add(item);
+        ShowItemCount(inventory.itemsCount);
         return item;
     }
     public void ShowItemCount(Dictionary<string, List<Item>> items)

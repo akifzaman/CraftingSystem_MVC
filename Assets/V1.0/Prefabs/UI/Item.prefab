@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3822795732804404044}
   - component: {fileID: 3822795732804404042}
   - component: {fileID: 3822795732804404043}
+  - component: {fileID: -9001200518972005219}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -78,6 +79,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-9001200518972005219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822795732804404045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1024574cf4f2644ea0b654c78d25f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3822795733321766198
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,12 +214,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnItemRemoved
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

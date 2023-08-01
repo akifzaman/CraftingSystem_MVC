@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public Transform ItemUIContainer;
     public GameObject ItemUI;
+    public InventoryManager inventoryManager;
+
     #region Singleton
     public void Awake()
     {
@@ -19,9 +21,20 @@ public class UIManager : MonoBehaviour
         CreateItemUI(item);
     }
 
+    public void OnItemRemoved(Item item)
+    {
+        RemoveItem(item);
+    }
+
     public void CreateItemUI(Item item)
     {
         var go = Instantiate(ItemUI, ItemUIContainer);
         go.GetComponent<Image>().sprite = item.itemIcon;
+        go.GetComponent<ItemController>().Initialize(inventoryManager);
+    }
+
+    private void RemoveItem(Item item)
+    {
+        
     }
 }

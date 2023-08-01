@@ -1393,6 +1393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemUIContainer: {fileID: 1011980739}
   ItemUI: {fileID: 3822795732804404045, guid: 55e09a989dfd8084e84d6693593531db, type: 3}
+  inventoryManager: {fileID: 1267675362}
 --- !u!1 &489461365
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,7 +2526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryCapacity: 30
-  items: []
+  inventory:
+    Items: []
 --- !u!4 &1267675363
 Transform:
   m_ObjectHideFlags: 0
