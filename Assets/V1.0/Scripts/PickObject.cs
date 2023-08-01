@@ -11,9 +11,12 @@ public class PickObject : MonoBehaviour, IPickable
     }
     public void Pick()
     {
-        //Add this item to the player's inventory if there is empty space
         Item addedItem = InventoryManager.instance.AddItemToInventory(item);
-        if (addedItem != null) Destroy(gameObject);
+        if (addedItem != null)
+        {
+            UIManager.Instance.OnItemPicked(addedItem);
+            Destroy(gameObject);
+        }
     }
 
 }
