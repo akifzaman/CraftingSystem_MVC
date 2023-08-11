@@ -10,11 +10,11 @@ public class ItemController : MonoBehaviour
     public void Initialize(Item item)
     {
         this.item = item;
-        //UseButton.onClick.AddListener();
-        DropButton.onClick.AddListener(OnDropButtonClick);
+        UseButton.onClick.AddListener(OnUseButtonClicked);
+        DropButton.onClick.AddListener(OnDropButtonClicked);
     }
 
-    public void OnDropButtonClick()
+    public void OnDropButtonClicked()
     {
         Drop(item);
     }
@@ -30,4 +30,25 @@ public class ItemController : MonoBehaviour
         ItemPosition.x += 1;
         var go = Instantiate(item.itemPrefab, ItemPosition, Quaternion.identity);
     }
+
+    public void OnUseButtonClicked()
+    {
+        Use(item);
+    }
+	public void Use(Item item)
+	{
+        if(CraftingManager.instance.Items.Count <= CraftingManager.instance.CraftingItemSlotCount)
+        {
+            CraftingManager.instance.Items.Add(item);
+            UIManager.Instance.OnItemUsed(item);
+        }
+        InventoryManager.instance.inventory.Items.Remove(item);
+		Destroy(gameObject);
+	}
+	//public void InstantiateItemOnScreen(Item item)
+	//{
+	//	ItemPosition = GameObject.Find("Player").transform.position;
+	//	ItemPosition.x += 1;
+	//	var go = Instantiate(item.itemPrefab, ItemPosition, Quaternion.identity);
+	//}
 }

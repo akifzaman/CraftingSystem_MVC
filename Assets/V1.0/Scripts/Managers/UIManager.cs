@@ -7,8 +7,10 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public TextMeshProUGUI healthAmountText;
     public TextMeshProUGUI damageAmountText;
-    public Transform ItemUIContainer;
-    public GameObject ItemUI;
+    public Transform InventoryItemUIContainer;
+    public Transform CraftingItemUIContainer;
+    public GameObject InventoryItemPrefab;
+    public GameObject CraftingItemPrefab;
     public InventoryManager inventoryManager;
 
     #region Singleton
@@ -26,12 +28,15 @@ public class UIManager : MonoBehaviour
     }
     public void OnItemPicked(Item item)
     {
-        CreateItemUI(item);
+        CreateItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
     }
-
-    public void CreateItemUI(Item item)
+	public void OnItemUsed(Item item)
+	{
+		CreateItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
+	}
+	public void CreateItemUI(Item item, GameObject itemPrefab, Transform container)
     {
-        var go = Instantiate(ItemUI, ItemUIContainer);
+        var go = Instantiate(itemPrefab, container);
         go.GetComponent<Image>().sprite = item.itemIcon;
         go.GetComponent<ItemController>().Initialize(item);
     }
