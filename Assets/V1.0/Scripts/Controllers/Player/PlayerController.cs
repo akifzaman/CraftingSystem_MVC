@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField] private float moveSpeed = 3f;
+	[SerializeField] private Player player = new Player();
 	public Animator PlayerAnimator;
-	private void Update()
+    private void Start()
+    {
+		UIManager.Instance.UpdatePlayerHUD(player);
+    }
+    private void Update()
 	{
 		float horizontalInput = Input.GetAxis("Horizontal");
 		float verticalInput = Input.GetAxis("Vertical");
@@ -16,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
 		movement = movement.normalized;
 
-		transform.position += movement * moveSpeed * Time.deltaTime;
+		transform.position += movement * player.moveSpeed * Time.deltaTime;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

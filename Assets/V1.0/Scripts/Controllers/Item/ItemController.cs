@@ -28,6 +28,6 @@ public class ItemController : MonoBehaviour
     {
         ItemPosition = GameObject.Find("Player").transform.position;
         ItemPosition.x += 1;
-        var go = Instantiate(item.prefab, ItemPosition, Quaternion.identity);
+        var go = Instantiate(item.itemPrefab, ItemPosition, Quaternion.identity);
     }
 }

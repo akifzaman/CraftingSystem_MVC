@@ -5,7 +5,7 @@ public class Item : ScriptableObject
 {
     public Sprite itemIcon;
     public string itemName;
-    public GameObject prefab;
+    public GameObject itemPrefab;
 
     //use enum for item type??
     public int healAmount; 

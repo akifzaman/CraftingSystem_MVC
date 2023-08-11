@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+    public TextMeshProUGUI healthAmountText;
+    public TextMeshProUGUI damageAmountText;
     public Transform ItemUIContainer;
     public GameObject ItemUI;
     public InventoryManager inventoryManager;
@@ -16,6 +19,11 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
+    public void UpdatePlayerHUD(Player player)
+    {
+        healthAmountText.text = $"Health: {player.health}";
+        damageAmountText.text = $"Damage: {player.damage}";
+    }
     public void OnItemPicked(Item item)
     {
         CreateItemUI(item);

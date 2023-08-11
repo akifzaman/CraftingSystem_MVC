@@ -5,4 +5,5 @@ public class Player
     public int health;
     public int maxHealth = 100;
     public int damage = 10;
+    public float moveSpeed = 3f;
 }
