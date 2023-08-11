@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PickObject : MonoBehaviour, IPickable
+public class PickItem : MonoBehaviour, IPickable
 {
     [SerializeField]
     private Item item;
