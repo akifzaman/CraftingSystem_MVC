@@ -21,20 +21,10 @@ public class UIManager : MonoBehaviour
         CreateItemUI(item);
     }
 
-    public void OnItemRemoved(Item item)
-    {
-        RemoveItem(item);
-    }
-
     public void CreateItemUI(Item item)
     {
         var go = Instantiate(ItemUI, ItemUIContainer);
         go.GetComponent<Image>().sprite = item.itemIcon;
-        go.GetComponent<ItemController>().Initialize(inventoryManager);
-    }
-
-    private void RemoveItem(Item item)
-    {
-        
+        go.GetComponent<ItemController>().Initialize(item);
     }
 }

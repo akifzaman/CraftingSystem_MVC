@@ -29,6 +29,7 @@ public class InventoryManager : MonoBehaviour
         ShowItemCount(inventory.itemsCount);
         return item;
     }
+
     public void ShowItemCount(Dictionary<string, List<Item>> items)
     {
         foreach (var item in items)

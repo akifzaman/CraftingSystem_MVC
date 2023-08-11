@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Metal
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -518094297, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
-  itemName: metal
+  itemName: Metal
   healAmount: 0
   damageAmount: 3
+  prefab: {fileID: 6792968492138305407, guid: 06715f9d97a3d974a89a7377abaa7833, type: 3}

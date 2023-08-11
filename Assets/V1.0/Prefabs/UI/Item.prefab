@@ -91,6 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1024574cf4f2644ea0b654c78d25f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  UseButton: {fileID: 3822795734491203191}
+  DropButton: {fileID: 3822795733321766196}
+  ItemPosition: {fileID: 0}
 --- !u!1 &3822795733321766198
 GameObject:
   m_ObjectHideFlags: 0

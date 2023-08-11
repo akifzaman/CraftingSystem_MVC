@@ -13,7 +13,7 @@ public class PickObject : MonoBehaviour, IPickable
     {
         Item addedItem = InventoryManager.instance.AddItemToInventory(item);
         if (addedItem != null)
-        {
+        { 
             UIManager.Instance.OnItemPicked(addedItem);
             Destroy(gameObject);
         }

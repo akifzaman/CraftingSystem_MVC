@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 1232390443, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
-  itemName: wood
+  itemName: Wood
   healAmount: 0
   damageAmount: 2
+  prefab: {fileID: 7335785192233822658, guid: 70756e7901831684182d58c78950d5c7, type: 3}
