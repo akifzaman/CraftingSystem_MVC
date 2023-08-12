@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
     }
     public IEnumerator DisableAlertText()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.0f);
         AlertText.gameObject.SetActive(false);
     }
 }

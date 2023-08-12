@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3822795732804404043}
   - component: {fileID: -9001200518972005219}
   m_Layer: 5
-  m_Name: Item
+  m_Name: InventoryItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   item: {fileID: 0}
   UseButton: {fileID: 3822795734491203191}
   DropButton: {fileID: 3822795733321766196}
-  ItemPosition: {fileID: 0}
+  ItemPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3822795733321766198
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3822795734491203189
