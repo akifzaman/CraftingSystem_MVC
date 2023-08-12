@@ -37,11 +37,9 @@ public class ItemController : MonoBehaviour
     }
 	public void Use(Item item)
 	{
-        if(CraftingManager.instance.Items.Count <= CraftingManager.instance.CraftingItemSlotCount)
-        {
-            CraftingManager.instance.Items.Add(item);
-            UIManager.Instance.OnItemUsed(item);
-        }
+        if (CraftingManager.instance.Items.Count >= CraftingManager.instance.CraftingItemSlotCount) return;
+        CraftingManager.instance.Items.Add(item);
+        UIManager.Instance.OnItemUsed(item);
         InventoryManager.instance.inventory.Items.Remove(item);
 		Destroy(gameObject);
 	}
