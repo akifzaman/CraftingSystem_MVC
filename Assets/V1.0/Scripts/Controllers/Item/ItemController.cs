@@ -45,10 +45,4 @@ public class ItemController : MonoBehaviour
         InventoryManager.instance.inventory.Items.Remove(item);
 		Destroy(gameObject);
 	}
-	//public void InstantiateItemOnScreen(Item item)
-	//{
-	//	ItemPosition = GameObject.Find("Player").transform.position;
-	//	ItemPosition.x += 1;
-	//	var go = Instantiate(item.itemPrefab, ItemPosition, Quaternion.identity);
-	//}
 }

@@ -28,16 +28,18 @@ public class UIManager : MonoBehaviour
     }
     public void OnItemPicked(Item item)
     {
-        CreateItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
+        var go = CreateItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
+        go.GetComponent<ItemController>().Initialize(item);
     }
 	public void OnItemUsed(Item item)
 	{
-		CreateItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
-	}
-	public void CreateItemUI(Item item, GameObject itemPrefab, Transform container)
+		var go = CreateItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
+        go.GetComponent<CraftingItemController>().Initialize(item);
+    }
+	public GameObject CreateItemUI(Item item, GameObject itemPrefab, Transform container)
     {
         var go = Instantiate(itemPrefab, container);
         go.GetComponent<Image>().sprite = item.itemIcon;
-        go.GetComponent<ItemController>().Initialize(item);
+        return go;
     }
 }
