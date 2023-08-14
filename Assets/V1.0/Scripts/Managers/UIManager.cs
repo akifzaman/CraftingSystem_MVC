@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public Transform CraftedItemUIContainer;
     public GameObject InventoryItemPrefab;
     public GameObject CraftingItemPrefab;
+    public GameObject CraftedItemPrefab;
     public InventoryManager inventoryManager;
 
     #region Singleton
@@ -32,19 +33,35 @@ public class UIManager : MonoBehaviour
     public void OnItemPicked(Item item)
     {
         var go = CreateItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
-        go.GetComponent<ItemController>().Initialize(item);
+        go.GetComponent<ItemUIController>().Initialize(item);
     }
     public void OnItemCrafted(Item item)
     {
-        var go = CreateItemUI(item, InventoryItemPrefab, CraftedItemUIContainer);
-        go.GetComponent<ItemController>().Initialize(item);
+        var go = CreateItemUI(item, CraftedItemPrefab, CraftedItemUIContainer);
+        go.GetComponent<CraftedItemUIController>().Initialize(item);
     }
 	public void OnItemUsed(Item item)
 	{
 		var go = CreateItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
-        go.GetComponent<CraftingItemController>().Initialize(item);
+        go.GetComponent<CraftingItemUIController>().Initialize(item);
     }
-    public void OnItemCrafted()
+    public void OnItemEquipped(Item item)
+    {
+        //switch (item.itemType)
+        //{
+        //    case ItemType.Consumable:
+        //        ChangePlayerStat();
+        //        break;
+        //    case ItemType.Equippable:
+        //        ChangePlayerStat();
+        //        break;
+        //}
+    }
+    public void ChangePlayerStat()
+    {
+        
+    }
+    public void DestroyCraftingItems()
     {
         foreach (Transform craftingItem in CraftingItemUIContainer)
         {

@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c166c60ac6ebf94418e8300e25a3aa68, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 220951182b6268541ac32c4d7ba5784c, type: 3}
+  m_Name: HealthBooster
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: -1157770208, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
-  itemName: Sword
+  itemIcon: {fileID: -179085191, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
+  itemName: HealthBooster
   itemDescription: 
-  itemPrefab: {fileID: 1907808023036212885, guid: 46afffc25acf70948a02a7d4c7d956bb, type: 3}
-  itemType: 1
+  itemPrefab: {fileID: 0}
+  itemType: 2
+  effects:
+  - effectType: 0
+    value: 20

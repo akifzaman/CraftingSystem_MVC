@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CraftingItemController : MonoBehaviour
+public class CraftingItemUIController : MonoBehaviour
 {
     public Item item;
     public Button DropButton;

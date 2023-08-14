@@ -1,5 +1,6 @@
 public enum ItemType
 {
-    WeaponCrafting,
+    Crafting,
+    Equippable,
     Consumable
 }

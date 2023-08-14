@@ -31,7 +31,6 @@ public class CraftingManager : MonoBehaviour
 		Item craftedItem = Craft();
 		if (craftedItem == null) return;
 		InventoryManager.instance.inventory.Items.Add(craftedItem);
-		//UIManager.Instance.OnItemPicked(craftedItem);
 		UIManager.Instance.OnItemCrafted(craftedItem);
 	}
 	public Item Craft()
@@ -41,7 +40,7 @@ public class CraftingManager : MonoBehaviour
 			UIManager.Instance.ShowAlert("Invalid Recipe!");
 			return null;
 		}
-		UIManager.Instance.OnItemCrafted();
+		UIManager.Instance.DestroyCraftingItems();
         UIManager.Instance.ShowAlert(ResultItems[ResultItemIndex].itemName + " Crafted!");
         Items.Clear();
         return ResultItems[ResultItemIndex];

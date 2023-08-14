@@ -421,9 +421,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 820644592}
   - {fileID: 489461366}
   - {fileID: 1286528790}
+  - {fileID: 820644592}
   - {fileID: 1101211636}
   m_Father: {fileID: 112955258}
   m_RootOrder: 2
@@ -2192,6 +2192,7 @@ MonoBehaviour:
   CraftedItemUIContainer: {fileID: 1224034278}
   InventoryItemPrefab: {fileID: 3822795732804404045, guid: 55e09a989dfd8084e84d6693593531db, type: 3}
   CraftingItemPrefab: {fileID: 8819675178467080981, guid: 0a6b2740ca8d42047a803ca00bc3cad0, type: 3}
+  CraftedItemPrefab: {fileID: 5719362379782429909, guid: 2f0352e990579ce4890815e23adbbc31, type: 3}
   inventoryManager: {fileID: 1267675362}
 --- !u!1 &467845281
 GameObject:
@@ -2302,7 +2303,7 @@ RectTransform:
   m_Children:
   - {fileID: 892447201}
   m_Father: {fileID: 61334725}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3878,7 +3879,7 @@ RectTransform:
   - {fileID: 853697233}
   - {fileID: 190900165}
   m_Father: {fileID: 61334725}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -4864,12 +4865,13 @@ MonoBehaviour:
   CraftingRecipes:
   - WoodWoodMetalMetal
   - WoodWoodWoodWood
-  - 
+  - MetalMetalMetalMetal
   - 
   Items: []
   ResultItems:
   - {fileID: 11400000, guid: 92ba0cdd3df798742bb02fed53ad08f4, type: 2}
   - {fileID: 11400000, guid: 341828f3cec6f374c83ea62769c5a466, type: 2}
+  - {fileID: 11400000, guid: 8bdb267aab2f14348983dd7824543088, type: 2}
   currentCraftingRecipe: 
   CraftButton: {fileID: 1550351258}
 --- !u!1 &965057865
@@ -6742,7 +6744,7 @@ RectTransform:
   m_Children:
   - {fileID: 2088099305}
   m_Father: {fileID: 61334725}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

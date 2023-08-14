@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemController : MonoBehaviour
+public class ItemUIController : MonoBehaviour
 {
     public Item item;
     public Button UseButton;
@@ -20,11 +20,11 @@ public class ItemController : MonoBehaviour
     }
     public void Drop(Item item)
     {
-        InstantiateItemOnScreen(item);
+        InstantiateItemOnWorldSpace(item);
         InventoryManager.instance.inventory.Items.Remove(item);
         Destroy(gameObject);
     }
-    public void InstantiateItemOnScreen(Item item)
+    public void InstantiateItemOnWorldSpace(Item item)
     {
         ItemPosition = GameObject.Find("Player").transform.position;
         ItemPosition.x += 1;
