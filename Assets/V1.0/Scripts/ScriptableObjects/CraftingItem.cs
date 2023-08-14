@@ -1,6 +1,9 @@
 using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Crafting Item")]
-public class CraftingItem : Item
+public class CraftingItem : ScriptableObject
 {
-    public ItemType itemType = ItemType.Crafting;
+    public Sprite itemIcon;
+    public string itemName;
+    public string itemDescription;
+    public GameObject itemPrefab;
 }

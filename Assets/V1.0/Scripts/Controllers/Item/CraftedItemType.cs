@@ -1,6 +1,5 @@
-public enum ItemType
+public enum CraftedItemType
 {
-    Crafting,
     Equippable,
     Consumable
 }

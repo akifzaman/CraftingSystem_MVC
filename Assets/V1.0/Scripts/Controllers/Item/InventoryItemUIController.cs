@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemUIController : MonoBehaviour
+public class InventoryItemUIController : MonoBehaviour
 {
-    public Item item;
+    public CraftingItem item;
     public Button UseButton;
     public Button DropButton;
     public Vector3 ItemPosition;
-    public void Initialize(Item item)
+    public void Initialize(CraftingItem item)
     {
         this.item = item;
         UseButton.onClick.AddListener(OnUseButtonClicked);
@@ -18,13 +18,13 @@ public class ItemUIController : MonoBehaviour
     {
         Drop(item);
     }
-    public void Drop(Item item)
+    public void Drop(CraftingItem item)
     {
         InstantiateItemOnWorldSpace(item);
         InventoryManager.instance.inventory.Items.Remove(item);
         Destroy(gameObject);
     }
-    public void InstantiateItemOnWorldSpace(Item item)
+    public void InstantiateItemOnWorldSpace(CraftingItem item)
     {
         ItemPosition = GameObject.Find("Player").transform.position;
         ItemPosition.x += 1;
@@ -35,7 +35,7 @@ public class ItemUIController : MonoBehaviour
     {
         Use(item);
     }
-	public void Use(Item item)
+	public void Use(CraftingItem item)
 	{
         if (CraftingManager.instance.Items.Count >= CraftingManager.instance.CraftingItemSlotCount) return;
         CraftingManager.instance.Items.Add(item);

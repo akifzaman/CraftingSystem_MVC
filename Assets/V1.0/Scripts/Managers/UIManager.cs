@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject CraftingItemPrefab;
     public GameObject CraftedItemPrefab;
     public InventoryManager inventoryManager;
+    public Player player;
 
     #region Singleton
     public void Awake()
@@ -25,55 +27,7 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-    public void UpdatePlayerHUD(Player player)
-    {
-        healthAmountText.text = $"Health: {player.health}";
-        damageAmountText.text = $"Damage: {player.damage}";
-    }
-    public void OnItemPicked(Item item)
-    {
-        var go = CreateItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
-        go.GetComponent<ItemUIController>().Initialize(item);
-    }
-    public void OnItemCrafted(Item item)
-    {
-        var go = CreateItemUI(item, CraftedItemPrefab, CraftedItemUIContainer);
-        go.GetComponent<CraftedItemUIController>().Initialize(item);
-    }
-	public void OnItemUsed(Item item)
-	{
-		var go = CreateItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
-        go.GetComponent<CraftingItemUIController>().Initialize(item);
-    }
-    public void OnItemEquipped(Item item)
-    {
-        //switch (item.itemType)
-        //{
-        //    case ItemType.Consumable:
-        //        ChangePlayerStat();
-        //        break;
-        //    case ItemType.Equippable:
-        //        ChangePlayerStat();
-        //        break;
-        //}
-    }
-    public void ChangePlayerStat()
-    {
-        
-    }
-    public void DestroyCraftingItems()
-    {
-        foreach (Transform craftingItem in CraftingItemUIContainer)
-        {
-            Destroy(craftingItem.gameObject);
-        }
-    }
-	public GameObject CreateItemUI(Item item, GameObject itemPrefab, Transform container)
-    {
-        var go = Instantiate(itemPrefab, container);
-        go.GetComponent<Image>().sprite = item.itemIcon;
-        return go;
-    }
+    //Alert UI
     public void ShowAlert(string text)
     {
         AlertText.gameObject.SetActive(true);
@@ -84,5 +38,70 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         AlertText.gameObject.SetActive(false);
+    }
+
+    //Inventory items functionalities
+    public void OnItemPicked(CraftingItem item)
+    {
+        var go = CreateInventoryItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
+        go.GetComponent<InventoryItemUIController>().Initialize(item);
+    }
+    public void OnItemUsed(CraftingItem item)
+    {
+        var go = CreateInventoryItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
+        go.GetComponent<CraftingItemUIController>().Initialize(item);
+    }
+    public GameObject CreateInventoryItemUI(CraftingItem item, GameObject itemPrefab, Transform container)
+    {
+        var go = Instantiate(itemPrefab, container);
+        go.GetComponent<Image>().sprite = item.itemIcon;
+        return go;
+    }
+
+    //Crafted items functionalities
+    public void OnItemCrafted(CraftedItem item)
+    {
+        var go = CreateCraftedItemUI(item, CraftedItemPrefab, CraftedItemUIContainer);
+        go.GetComponent<CraftedItemUIController>().Initialize(item);
+    }
+    public void OnItemEquipped(CraftedItem item)
+    {    
+        ChangePlayerStat(item);  
+    }
+    public GameObject CreateCraftedItemUI(CraftedItem item, GameObject itemPrefab, Transform container)
+    {
+        var go = Instantiate(itemPrefab, container);
+        go.GetComponent<Image>().sprite = item.itemIcon;
+        return go;
+    }
+    public void ChangePlayerStat(CraftedItem item)
+    {
+        if (item.itemType == CraftedItemType.Equippable)
+        {
+            //
+        }
+        else if (item.itemType == CraftedItemType.Consumable)
+        {
+            for (int i = 0; i < item.effects.Count; i++)
+            {
+                if (item.effects[i].effectType == ConsumableEffectType.HealthIncrease) player.health += item.effects[i].value;
+                if (item.effects[i].effectType == ConsumableEffectType.DamageBoost) player.damage += item.effects[i].value;
+            }
+            UpdatePlayerHUD(player);
+        }
+    }
+    public void DestroyCraftingItems()
+    {
+        foreach (Transform craftingItem in CraftingItemUIContainer)
+        {
+            Destroy(craftingItem.gameObject);
+        }
+    }
+
+    //Player stat UI
+    public void UpdatePlayerHUD(Player player)
+    {
+        healthAmountText.text = $"Health: {player.health}";
+        damageAmountText.text = $"Damage: {player.damage}";
     }
 }

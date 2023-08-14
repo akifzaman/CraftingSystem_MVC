@@ -3,6 +3,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public class Inventory
 {
-    public List<Item> Items = new List<Item>();
-    public Dictionary<string, List<Item>> itemsCount = new Dictionary<string, List<Item>>();
+    public List<CraftingItem> Items = new List<CraftingItem>();
+    public List<CraftedItem> CraftedItems = new List<CraftedItem>();
+    public Dictionary<string, List<CraftingItem>> inventoryItemsCount = new Dictionary<string, List<CraftingItem>>();
+    public Dictionary<string, List<CraftedItem>> craftedItemsCount = new Dictionary<string, List<CraftedItem>>();
 }

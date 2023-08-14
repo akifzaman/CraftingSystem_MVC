@@ -9,8 +9,8 @@ public class CraftingManager : MonoBehaviour
 	public int CraftingItemSlotCount;
 	public int ResultItemIndex;
 	public List<string> CraftingRecipes = new List<string>();
-	public List<Item> Items = new List<Item>();
-	public List<Item> ResultItems = new List<Item>();
+	public List<CraftingItem> Items = new List<CraftingItem>();
+	public List<CraftedItem> ResultItems = new List<CraftedItem>();
 	public string currentCraftingRecipe;
 	public Button CraftButton;
 
@@ -28,12 +28,12 @@ public class CraftingManager : MonoBehaviour
     }
 	public void OnCraftButtonClicked()
 	{
-		Item craftedItem = Craft();
+		CraftedItem craftedItem = Craft();
 		if (craftedItem == null) return;
-		InventoryManager.instance.inventory.Items.Add(craftedItem);
+		InventoryManager.instance.inventory.CraftedItems.Add(craftedItem);
 		UIManager.Instance.OnItemCrafted(craftedItem);
 	}
-	public Item Craft()
+	public CraftedItem Craft()
 	{
 		if (!IsRecipeValid())
 		{
@@ -52,7 +52,7 @@ public class CraftingManager : MonoBehaviour
 		{
 			currentCraftingRecipe = "";
 			ResultItemIndex = -1;
-            foreach (Item item in Items) currentCraftingRecipe += item.itemName;
+            foreach (CraftingItem item in Items) currentCraftingRecipe += item.itemName;
 			foreach (var recipe in CraftingRecipes)
 			{
 				ResultItemIndex++;

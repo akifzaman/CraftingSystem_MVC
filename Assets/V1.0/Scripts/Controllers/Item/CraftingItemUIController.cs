@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class CraftingItemUIController : MonoBehaviour
 {
-    public Item item;
+    public CraftingItem item;
     public Button DropButton;
-    public void Initialize(Item item)
+    public void Initialize(CraftingItem item)
     {
         this.item = item;
         DropButton.onClick.AddListener(OnDropButtonClicked);
@@ -15,7 +15,7 @@ public class CraftingItemUIController : MonoBehaviour
     {
         DropBackToInventory(item);
     }
-    public void DropBackToInventory(Item item)
+    public void DropBackToInventory(CraftingItem item)
     {
         InventoryManager.instance.inventory.Items.Add(item);
         UIManager.Instance.OnItemPicked(item);

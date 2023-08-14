@@ -3,7 +3,7 @@ using UnityEngine;
 public class PickItem : MonoBehaviour, IPickable
 {
     [SerializeField]
-    private Item item;
+    private CraftingItem item;
     private void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -11,7 +11,7 @@ public class PickItem : MonoBehaviour, IPickable
     }
     public void Pick()
     {
-        Item addedItem = InventoryManager.instance.AddItemToInventory(item);
+        CraftingItem addedItem = InventoryManager.instance.AddItemToInventory(item);
         if (addedItem != null)
         { 
             UIManager.Instance.OnItemPicked(addedItem);

@@ -15,22 +15,22 @@ public class InventoryManager : MonoBehaviour
     }
     #endregion
 
-    public Item AddItemToInventory(Item item)
+    public CraftingItem AddItemToInventory(CraftingItem item)
     {
         if (inventory.Items.Count >= inventoryCapacity) return item;
         inventory.Items.Add(item);
-        if (!inventory.itemsCount.ContainsKey(item.itemName))
+        if (!inventory.inventoryItemsCount.ContainsKey(item.itemName))
         {
-            List<Item> newItemsList = new List<Item>();
+            List<CraftingItem> newItemsList = new List<CraftingItem>();
             newItemsList.Add(item);
-            inventory.itemsCount.Add(item.itemName, newItemsList);
+            inventory.inventoryItemsCount.Add(item.itemName, newItemsList);
         }
-        else inventory.itemsCount[item.itemName].Add(item);
-        ShowItemCount(inventory.itemsCount);
+        else inventory.inventoryItemsCount[item.itemName].Add(item);
+        ShowItemCount(inventory.inventoryItemsCount);
         return item;
     }
 
-    public void ShowItemCount(Dictionary<string, List<Item>> items)
+    public void ShowItemCount(Dictionary<string, List<CraftingItem>> items)
     {
         foreach (var item in items)
         {

@@ -423,6 +423,8 @@ RectTransform:
   m_Children:
   - {fileID: 489461366}
   - {fileID: 1286528790}
+  - {fileID: 593757671}
+  - {fileID: 1760027762}
   - {fileID: 820644592}
   - {fileID: 1101211636}
   m_Father: {fileID: 112955258}
@@ -718,8 +720,6 @@ RectTransform:
   - {fileID: 576537934}
   - {fileID: 1259205531}
   - {fileID: 61334725}
-  - {fileID: 593757671}
-  - {fileID: 1760027762}
   - {fileID: 696541095}
   - {fileID: 1666070318}
   m_Father: {fileID: 0}
@@ -2194,6 +2194,12 @@ MonoBehaviour:
   CraftingItemPrefab: {fileID: 8819675178467080981, guid: 0a6b2740ca8d42047a803ca00bc3cad0, type: 3}
   CraftedItemPrefab: {fileID: 5719362379782429909, guid: 2f0352e990579ce4890815e23adbbc31, type: 3}
   inventoryManager: {fileID: 1267675362}
+  player:
+    playerName: 
+    health: 0
+    damage: 0
+    maxHealth: 100
+    moveSpeed: 3
 --- !u!1 &467845281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2868,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593757670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2870,12 +2876,12 @@ RectTransform:
   - {fileID: 1884914047}
   - {fileID: 1526472018}
   - {fileID: 1550351257}
-  m_Father: {fileID: 112955258}
-  m_RootOrder: 3
+  m_Father: {fileID: 61334725}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -350, y: -800}
+  m_AnchoredPosition: {x: -300.00003, y: -750}
   m_SizeDelta: {x: 600, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593757672
@@ -3447,7 +3453,7 @@ RectTransform:
   m_Children:
   - {fileID: 8493755}
   m_Father: {fileID: 112955258}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3879,7 +3885,7 @@ RectTransform:
   - {fileID: 853697233}
   - {fileID: 190900165}
   m_Father: {fileID: 61334725}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -4866,12 +4872,13 @@ MonoBehaviour:
   - WoodWoodMetalMetal
   - WoodWoodWoodWood
   - MetalMetalMetalMetal
-  - 
+  - WoodMetalMetalWood
   Items: []
   ResultItems:
   - {fileID: 11400000, guid: 92ba0cdd3df798742bb02fed53ad08f4, type: 2}
-  - {fileID: 11400000, guid: 341828f3cec6f374c83ea62769c5a466, type: 2}
   - {fileID: 11400000, guid: 8bdb267aab2f14348983dd7824543088, type: 2}
+  - {fileID: 11400000, guid: 50d92deeda001ac438e1f4cacb9fad27, type: 2}
+  - {fileID: 11400000, guid: a068ce95b3635c74198e4a1e569109d7, type: 2}
   currentCraftingRecipe: 
   CraftButton: {fileID: 1550351258}
 --- !u!1 &965057865
@@ -5395,7 +5402,7 @@ RectTransform:
   m_Children:
   - {fileID: 1348686757}
   m_Father: {fileID: 61334725}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5447,30 +5454,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 61334724}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 593757670}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 576537933}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -6544,6 +6527,7 @@ MonoBehaviour:
   inventoryCapacity: 30
   inventory:
     Items: []
+    CraftedItems: []
 --- !u!4 &1267675363
 Transform:
   m_ObjectHideFlags: 0
@@ -8763,7 +8747,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 112955258}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9254,19 +9238,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760027761}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1361565926}
   - {fileID: 1578839425}
-  m_Father: {fileID: 112955258}
-  m_RootOrder: 4
+  m_Father: {fileID: 61334725}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1053.05, y: -800}
+  m_AnchoredPosition: {x: -1003.0501, y: -750}
   m_SizeDelta: {x: 800, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760027763
