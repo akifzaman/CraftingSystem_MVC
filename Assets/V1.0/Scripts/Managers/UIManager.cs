@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI AlertText;
     public Transform InventoryItemUIContainer;
     public Transform CraftingItemUIContainer;
+    public Transform CraftedItemUIContainer;
     public GameObject InventoryItemPrefab;
     public GameObject CraftingItemPrefab;
     public InventoryManager inventoryManager;
@@ -31,6 +32,11 @@ public class UIManager : MonoBehaviour
     public void OnItemPicked(Item item)
     {
         var go = CreateItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
+        go.GetComponent<ItemController>().Initialize(item);
+    }
+    public void OnItemCrafted(Item item)
+    {
+        var go = CreateItemUI(item, InventoryItemPrefab, CraftedItemUIContainer);
         go.GetComponent<ItemController>().Initialize(item);
     }
 	public void OnItemUsed(Item item)

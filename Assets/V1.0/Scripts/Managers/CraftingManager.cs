@@ -31,7 +31,8 @@ public class CraftingManager : MonoBehaviour
 		Item craftedItem = Craft();
 		if (craftedItem == null) return;
 		InventoryManager.instance.inventory.Items.Add(craftedItem);
-		UIManager.Instance.OnItemPicked(craftedItem);
+		//UIManager.Instance.OnItemPicked(craftedItem);
+		UIManager.Instance.OnItemCrafted(craftedItem);
 	}
 	public Item Craft()
 	{
