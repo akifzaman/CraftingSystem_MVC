@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CraftingManager : MonoBehaviour
 {
 	public static CraftingManager instance;

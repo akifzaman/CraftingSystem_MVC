@@ -3,18 +3,18 @@ using UnityEngine.UI;
 
 public class CraftedItemUIController : MonoBehaviour
 {
-    public CraftedItem item;
+    public CraftedItem craftedItem;
     public Button EquipButton;
     public void Initialize(CraftedItem item)
     {
-        this.item = item;
+        craftedItem = item;
         EquipButton.onClick.AddListener(OnEquipButtonClicked);
     }
 
     public void OnEquipButtonClicked()
     {
-        Debug.Log(item.itemName + " is equipped");
-        Equip(item);
+        Debug.Log(craftedItem.itemName + " is equipped");
+        Equip(craftedItem);
     }
     public void Equip(CraftedItem item)
     {

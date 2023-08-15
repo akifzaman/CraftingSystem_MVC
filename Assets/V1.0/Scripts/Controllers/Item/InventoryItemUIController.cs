@@ -3,20 +3,20 @@ using UnityEngine.UI;
 
 public class InventoryItemUIController : MonoBehaviour
 {
-    public CraftingItem item;
+    public CraftingItem craftingItem;
     public Button UseButton;
     public Button DropButton;
     public Vector3 ItemPosition;
     public void Initialize(CraftingItem item)
     {
-        this.item = item;
+        craftingItem = item;
         UseButton.onClick.AddListener(OnUseButtonClicked);
         DropButton.onClick.AddListener(OnDropButtonClicked);
     }
 
     public void OnDropButtonClicked()
     {
-        Drop(item);
+        Drop(craftingItem);
     }
     public void Drop(CraftingItem item)
     {
@@ -33,7 +33,7 @@ public class InventoryItemUIController : MonoBehaviour
 
     public void OnUseButtonClicked()
     {
-        Use(item);
+        Use(craftingItem);
     }
 	public void Use(CraftingItem item)
 	{

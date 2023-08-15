@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
             inventory.inventoryItemsCount.Add(item.itemName, newItemsList);
         }
         else inventory.inventoryItemsCount[item.itemName].Add(item);
-        ShowItemCount(inventory.inventoryItemsCount);
+        //ShowItemCount(inventory.inventoryItemsCount);
         return item;
     }
 
