@@ -9,12 +9,16 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI healthAmountText;
     public TextMeshProUGUI damageAmountText;
     public TextMeshProUGUI AlertText;
+    public TextMeshProUGUI RecipeItemName;
+    public TextMeshProUGUI RecipeItemDescription;
     public Transform InventoryItemUIContainer;
     public Transform CraftingItemUIContainer;
     public Transform CraftedItemUIContainer;
     public GameObject InventoryItemPrefab;
     public GameObject CraftingItemPrefab;
     public GameObject CraftedItemPrefab;
+    public GameObject RecipeItemDetailsPanel;
+    public Image RecipeItemIcon;
     public InventoryManager inventoryManager;
     public Player player;
 
@@ -95,6 +99,15 @@ public class UIManager : MonoBehaviour
         {
             Destroy(craftingItem.gameObject);
         }
+    }
+
+    //Recipe item functionalities
+    public void ShowItemDetails(Item item)
+    {
+        RecipeItemDetailsPanel.gameObject.SetActive(true);
+        RecipeItemIcon.sprite = item.itemIcon;
+        RecipeItemName.text = item.itemName;
+        RecipeItemDescription.text = item.itemDescription;
     }
 
     //Player stat UI

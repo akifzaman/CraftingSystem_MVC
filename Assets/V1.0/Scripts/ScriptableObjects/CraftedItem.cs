@@ -1,11 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Crafted Item")]
-public class CraftedItem : ScriptableObject
+public class CraftedItem : Item
 {
-    public Sprite itemIcon;
-    public string itemName;
-    public string itemDescription;
     public CraftedItemType itemType;
     public List<ConsumableEffect> effects;
     public GameObject itemPrefab;
