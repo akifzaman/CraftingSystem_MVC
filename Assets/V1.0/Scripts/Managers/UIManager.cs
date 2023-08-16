@@ -112,7 +112,7 @@ public class UIManager : MonoBehaviour
         RecipeItemDescription.text = item.itemDescription;
     }
 
-    //Player stat UI
+    //Player stats UI
     public void UpdatePlayerHUD(Player player)
     {
         healthAmountText.text = $"Health: {player.health}";

@@ -43,8 +43,4 @@ public class InventoryItemUIController : MonoBehaviour
         InventoryManager.instance.inventory.Items.Remove(item);
 		Destroy(gameObject);
 	}
-    public void Print()
-    {
-        Debug.Log("Hello wo");
-    }
 }

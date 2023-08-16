@@ -1,10 +1,5 @@
-using UnityEngine;
-using UnityEngine.UI;
-
 public class CraftingItemUIController : InventoryItemUIController
 {
-    //public CraftingItem craftingItem;
-    //public Button DropButton;
     public void Initialize(CraftingItem item)
     {
         craftingItem = item;

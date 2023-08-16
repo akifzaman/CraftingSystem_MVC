@@ -26,15 +26,6 @@ public class InventoryManager : MonoBehaviour
             inventory.inventoryItemsCount.Add(item.itemName, newItemsList);
         }
         else inventory.inventoryItemsCount[item.itemName].Add(item);
-        //ShowItemCount(inventory.inventoryItemsCount);
         return item;
-    }
-
-    public void ShowItemCount(Dictionary<string, List<CraftingItem>> items)
-    {
-        foreach (var item in items)
-        {
-            Debug.Log(item.Key + "count is: " + item.Value.Count);
-        }
     }
 }
