@@ -44,15 +44,17 @@ public class UIManager : MonoBehaviour
     }
 
     //Inventory items functionalities
-    public void OnItemPicked(CraftingItem item)
+    public GameObject OnItemPicked(CraftingItem item)
     {
         var go = CreateInventoryItemUI(item, InventoryItemPrefab, InventoryItemUIContainer);
         go.GetComponent<InventoryItemUIController>().Initialize(item);
+        return go;
     }
-    public void OnItemUsed(CraftingItem item)
+    public GameObject OnItemUsed(CraftingItem item)
     {
         var go = CreateInventoryItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
         go.GetComponent<CraftingItemUIController>().Initialize(item);
+        return go;
     }
     public GameObject CreateInventoryItemUI(CraftingItem item, GameObject itemPrefab, Transform container)
     {

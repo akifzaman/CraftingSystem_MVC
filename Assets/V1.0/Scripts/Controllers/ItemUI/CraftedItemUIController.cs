@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CraftedItemUIController : MonoBehaviour
+public class CraftedItemUIController : InventoryItemUIController
 {
     public CraftedItem craftedItem;
     public Button EquipButton;
