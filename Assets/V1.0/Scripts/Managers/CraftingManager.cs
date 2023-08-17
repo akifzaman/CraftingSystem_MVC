@@ -12,6 +12,7 @@ public class CraftingManager : MonoBehaviour
     public string currentCraftingRecipe;
     public Button CraftButton;
     [SerializeField] private int ResultItemIndex;
+    public Item currentCraftingItem;
     #region Singleton
     public void Awake()
     {
@@ -24,6 +25,27 @@ public class CraftingManager : MonoBehaviour
     {
         CraftButton.onClick.AddListener(OnCraftButtonClicked);
     }
+
+    #region Item Drag Functions
+    public void OnMouseDownCraftingItem(Item item)
+    {
+        if (currentCraftingItem == null)
+        {
+            currentCraftingItem = item;
+            UIManager.Instance.CustomCursor.gameObject.SetActive(true);
+            UIManager.Instance.CustomCursor.sprite = item.ItemIcon;
+        }
+    }
+    public void OnMouseUpCraftingItem()
+    {
+        if (currentCraftingItem != null)
+        {
+            currentCraftingItem = null;
+            UIManager.Instance.CustomCursor.gameObject.SetActive(false);
+        }
+    }
+    #endregion
+
     public void OnCraftButtonClicked()
     {
         CraftedItem craftedItem = Craft();

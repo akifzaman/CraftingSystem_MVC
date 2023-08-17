@@ -22,6 +22,10 @@ public class UIManager : MonoBehaviour
     public InventoryManager inventoryManager;
     public Player player;
 
+    //Added for Draggable item
+    public Image CustomCursor;
+    public bool IsOverlapTrue;
+    
     #region Singleton
     public void Awake()
     {

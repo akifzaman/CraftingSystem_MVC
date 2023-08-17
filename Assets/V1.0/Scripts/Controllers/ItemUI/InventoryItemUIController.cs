@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItemUIController : MonoBehaviour
+public class InventoryItemUIController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public CraftingItem craftingItem;
     public Button UseButton;
@@ -43,4 +44,20 @@ public class InventoryItemUIController : MonoBehaviour
         InventoryManager.Instance.inventory.Items.Remove(item);
 		Destroy(gameObject);
 	}
+
+    //Item Drag Functionalities
+    public void OnDrag(PointerEventData eventData){}
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        CraftingManager.instance.OnMouseDownCraftingItem(craftingItem);
+    }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (UIManager.Instance.IsOverlapTrue)
+        {
+            OnUseButtonClicked();
+        }
+        UIManager.Instance.IsOverlapTrue = false;
+        CraftingManager.instance.OnMouseUpCraftingItem();
+    }
 }
