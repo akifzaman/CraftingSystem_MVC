@@ -13,12 +13,12 @@ public class CraftedItemUIController : InventoryItemUIController
 
     public void OnEquipButtonClicked()
     {
-        Debug.Log(craftedItem.itemName + " is equipped");
+        Debug.Log(craftedItem.ItemName + " is equipped");
         Equip(craftedItem);
     }
     public void Equip(CraftedItem item)
     {
-        InventoryManager.instance.inventory.CraftedItems.Remove(item);
+        InventoryManager.Instance.inventory.CraftedItems.Remove(item);
         UIManager.Instance.OnItemEquipped(item);
         Destroy(gameObject);
     }

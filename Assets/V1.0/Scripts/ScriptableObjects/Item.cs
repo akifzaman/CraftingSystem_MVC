@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Item : ScriptableObject
 {
-    public Sprite itemIcon;
-    public string itemName;
-    public string itemDescription;
+    public Sprite ItemIcon;
+    public string ItemName;
+    public string ItemDescription;
 }

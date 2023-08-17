@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c166c60ac6ebf94418e8300e25a3aa68, type: 3}
   m_Name: EnergyBooster
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: -943106282, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
-  itemName: EnergyBooster
-  itemDescription: Increases both your health and damage by 10.
-  itemType: 1
-  effects:
-  - effectType: 0
-    value: 10
-  - effectType: 1
-    value: 10
-  itemPrefab: {fileID: 0}
+  ItemIcon: {fileID: -943106282, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
+  ItemName: EnergyBooster
+  ItemDescription: Increases both health and damage by 15.
+  ItemType: 1
+  Effects:
+  - EffectType: 0
+    Value: 15
+  - EffectType: 1
+    Value: 15
+  ItemPrefab: {fileID: 0}

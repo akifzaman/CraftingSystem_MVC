@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager instance;
-    public int inventoryCapacity;
+    public static InventoryManager Instance;
     public Inventory inventory = new Inventory();
+    [SerializeField] private int inventoryCapacity;
 
     #region Singleton
     public void Awake()
     {
-        if(instance == null) instance = this;
+        if(Instance == null) Instance = this;
         else Destroy(this.gameObject);
     }
     #endregion
@@ -19,13 +19,13 @@ public class InventoryManager : MonoBehaviour
     {
         if (inventory.Items.Count >= inventoryCapacity) return item;
         inventory.Items.Add(item);
-        if (!inventory.inventoryItemsCount.ContainsKey(item.itemName))
+        if (!inventory.InventoryItemsCount.ContainsKey(item.ItemName))
         {
             List<CraftingItem> newItemsList = new List<CraftingItem>();
             newItemsList.Add(item);
-            inventory.inventoryItemsCount.Add(item.itemName, newItemsList);
+            inventory.InventoryItemsCount.Add(item.ItemName, newItemsList);
         }
-        else inventory.inventoryItemsCount[item.itemName].Add(item);
+        else inventory.InventoryItemsCount[item.ItemName].Add(item);
         return item;
     }
 }

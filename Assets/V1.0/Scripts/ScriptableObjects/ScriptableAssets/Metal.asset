@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504bdecdb7259e640992527c02c69d53, type: 3}
   m_Name: Metal
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: -518094297, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
-  itemName: Metal
-  itemDescription: Metal is used to create weapon.
-  itemPrefab: {fileID: 6792968492138305407, guid: 06715f9d97a3d974a89a7377abaa7833, type: 3}
+  ItemIcon: {fileID: -518094297, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
+  ItemName: Metal
+  ItemDescription: Used to create both consumable and equipable items.
+  ItemPrefab: {fileID: 6792968492138305407, guid: 06715f9d97a3d974a89a7377abaa7833, type: 3}

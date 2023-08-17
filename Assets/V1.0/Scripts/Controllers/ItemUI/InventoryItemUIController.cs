@@ -21,14 +21,14 @@ public class InventoryItemUIController : MonoBehaviour
     public void Drop(CraftingItem item)
     {
         InstantiateItemOnWorldSpace(item);
-        InventoryManager.instance.inventory.Items.Remove(item);
+        InventoryManager.Instance.inventory.Items.Remove(item);
         Destroy(gameObject);
     }
     public void InstantiateItemOnWorldSpace(CraftingItem item)
     {
         ItemPosition = GameObject.Find("Player").transform.position;
         ItemPosition.x += 1;
-        var go = Instantiate(item.itemPrefab, ItemPosition, Quaternion.identity);
+        var go = Instantiate(item.ItemPrefab, ItemPosition, Quaternion.identity);
     }
 
     public void OnUseButtonClicked()
@@ -40,7 +40,7 @@ public class InventoryItemUIController : MonoBehaviour
         if (CraftingManager.instance.Items.Count >= CraftingManager.instance.CraftingItemSlotCount) return;
         CraftingManager.instance.Items.Add(item);
         UIManager.Instance.OnItemUsed(item);
-        InventoryManager.instance.inventory.Items.Remove(item);
+        InventoryManager.Instance.inventory.Items.Remove(item);
 		Destroy(gameObject);
 	}
 }

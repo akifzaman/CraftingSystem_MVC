@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c166c60ac6ebf94418e8300e25a3aa68, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: -1157770208, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
-  itemName: Sword
-  itemDescription: Cuts everything on it's way!
-  itemType: 0
-  effects: []
-  itemPrefab: {fileID: 1907808023036212885, guid: 46afffc25acf70948a02a7d4c7d956bb, type: 3}
+  ItemIcon: {fileID: -1157770208, guid: 3f6612d5c1df5264db69a3f1d5990f2d, type: 3}
+  ItemName: Sword
+  ItemDescription: Cuts any objects in it's way.
+  ItemType: 0
+  Effects: []
+  ItemPrefab: {fileID: 1907808023036212885, guid: 46afffc25acf70948a02a7d4c7d956bb, type: 3}

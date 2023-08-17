@@ -3,13 +3,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Crafted Item")]
 public class CraftedItem : Item
 {
-    public CraftedItemType itemType;
-    public List<ConsumableEffect> effects;
-    public GameObject itemPrefab;
+    public CraftedItemType ItemType;
+    public List<ConsumableEffect> Effects;
+    public GameObject ItemPrefab;
 }
 [System.Serializable]
 public class ConsumableEffect
 {
-    public ConsumableEffectType effectType;
-    public float value;
+    public ConsumableEffectType EffectType;
+    public float Value;
 }

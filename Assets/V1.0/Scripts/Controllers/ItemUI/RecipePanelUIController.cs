@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class RecipePanelUIController : MonoBehaviour
 {
-    public List<Button> recipeItem;
-    public List<Item> recipeItemCrafting;
+    public List<Button> RecipeItem;
+    public List<Item> RecipeItemCrafting;
     private void Awake()
     {
-        for (int i = 0; i < recipeItem.Count; i++)
+        for (int i = 0; i < RecipeItem.Count; i++)
         {
             int index = i;
-            recipeItem[i].image.sprite = recipeItemCrafting[i].itemIcon;
-            recipeItem[i].onClick.AddListener(() => OnRecipeCraftingItemClicked(recipeItemCrafting[index]));
+            RecipeItem[i].image.sprite = RecipeItemCrafting[i].ItemIcon;
+            RecipeItem[i].onClick.AddListener(() => OnRecipeCraftingItemClicked(RecipeItemCrafting[index]));
         }
     }
     public void OnRecipeCraftingItemClicked(Item item)

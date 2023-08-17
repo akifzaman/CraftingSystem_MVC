@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-    public TextMeshProUGUI healthAmountText;
-    public TextMeshProUGUI damageAmountText;
+    public TextMeshProUGUI HealthAmountText;
+    public TextMeshProUGUI DamageAmountText;
     public TextMeshProUGUI AlertText;
     public TextMeshProUGUI RecipeItemName;
     public TextMeshProUGUI RecipeItemDescription;
@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
     public GameObject CreateInventoryItemUI(CraftingItem item, GameObject itemPrefab, Transform container)
     {
         var go = Instantiate(itemPrefab, container);
-        go.GetComponent<Image>().sprite = item.itemIcon;
+        go.GetComponent<Image>().sprite = item.ItemIcon;
         return go;
     }
 
@@ -76,21 +76,21 @@ public class UIManager : MonoBehaviour
     public GameObject CreateCraftedItemUI(CraftedItem item, GameObject itemPrefab, Transform container)
     {
         var go = Instantiate(itemPrefab, container);
-        go.GetComponent<Image>().sprite = item.itemIcon;
+        go.GetComponent<Image>().sprite = item.ItemIcon;
         return go;
     }
     public void ChangePlayerStat(CraftedItem item)
     {
-        if (item.itemType == CraftedItemType.Equippable)
+        if (item.ItemType == CraftedItemType.Equippable)
         {
             //
         }
-        else if (item.itemType == CraftedItemType.Consumable)
+        else if (item.ItemType == CraftedItemType.Consumable)
         {
-            for (int i = 0; i < item.effects.Count; i++)
+            for (int i = 0; i < item.Effects.Count; i++)
             {
-                if (item.effects[i].effectType == ConsumableEffectType.HealthIncrease) player.health += item.effects[i].value;
-                if (item.effects[i].effectType == ConsumableEffectType.DamageBoost) player.damage += item.effects[i].value;
+                if (item.Effects[i].EffectType == ConsumableEffectType.HealthIncrease) player.health += item.Effects[i].Value;
+                if (item.Effects[i].EffectType == ConsumableEffectType.DamageBoost) player.damage += item.Effects[i].Value;
             }
             UpdatePlayerHUD(player);
         }
@@ -107,15 +107,15 @@ public class UIManager : MonoBehaviour
     public void ShowItemDetails(Item item)
     {
         RecipeItemDetailsPanel.gameObject.SetActive(true);
-        RecipeItemIcon.sprite = item.itemIcon;
-        RecipeItemName.text = item.itemName;
-        RecipeItemDescription.text = item.itemDescription;
+        RecipeItemIcon.sprite = item.ItemIcon;
+        RecipeItemName.text = item.ItemName;
+        RecipeItemDescription.text = item.ItemDescription;
     }
 
     //Player stats UI
     public void UpdatePlayerHUD(Player player)
     {
-        healthAmountText.text = $"Health: {player.health}";
-        damageAmountText.text = $"Damage: {player.damage}";
+        HealthAmountText.text = $"Health: {player.health}";
+        DamageAmountText.text = $"Damage: {player.damage}";
     }
 }

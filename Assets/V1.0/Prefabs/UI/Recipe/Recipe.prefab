@@ -388,13 +388,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d027a186add304f8629dd650d452a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeItem:
+  RecipeItem:
   - {fileID: 2048999656148813963}
   - {fileID: 3403801684330852395}
   - {fileID: 5231799829233888056}
   - {fileID: 6910764835865728028}
   - {fileID: 6203517544887282173}
-  recipeItemCrafting:
+  RecipeItemCrafting:
   - {fileID: 11400000, guid: bd21e7cf92bc7b948a254896f8161243, type: 2}
   - {fileID: 11400000, guid: bd21e7cf92bc7b948a254896f8161243, type: 2}
   - {fileID: 11400000, guid: 341828f3cec6f374c83ea62769c5a466, type: 2}

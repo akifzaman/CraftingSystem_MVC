@@ -11,7 +11,7 @@ public class CraftingItemUIController : InventoryItemUIController
     }
     public void DropBackToInventory(CraftingItem item)
     {
-        InventoryManager.instance.inventory.Items.Add(item);
+        InventoryManager.Instance.inventory.Items.Add(item);
         var go = UIManager.Instance.OnItemPicked(item);
         CraftingManager.instance.Items.Remove(item);
         Destroy(gameObject);
