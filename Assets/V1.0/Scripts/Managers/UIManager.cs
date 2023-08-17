@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
     public GameObject OnItemUsed(CraftingItem item)
     {
         var go = CreateInventoryItemUI(item, CraftingItemPrefab, CraftingItemUIContainer);
-        go.GetComponent<CraftingItemUIController>().Initialize(item);
+        go.GetComponent<CraftingItemUIController>().InitializeCraftingItem(item);
         return go;
     }
     public GameObject CreateInventoryItemUI(CraftingItem item, GameObject itemPrefab, Transform container)

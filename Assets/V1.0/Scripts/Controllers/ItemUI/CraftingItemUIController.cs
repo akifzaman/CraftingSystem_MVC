@@ -1,6 +1,6 @@
 public class CraftingItemUIController : InventoryItemUIController
 {
-    public void Initialize(CraftingItem item)
+    public void InitializeCraftingItem(CraftingItem item)
     {
         craftingItem = item;
         DropButton.onClick.AddListener(OnDropBackToInventoryButtonClicked);
