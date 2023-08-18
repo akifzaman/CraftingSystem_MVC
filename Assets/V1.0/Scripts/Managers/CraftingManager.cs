@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -73,6 +74,7 @@ public class CraftingManager : MonoBehaviour
             currentCraftingRecipe = "";
             ResultItemIndex = -1;
             foreach (CraftingItem item in Items) currentCraftingRecipe += item.ItemName;
+            //string s = CraftingRecipes.Where(c => c.Contains(currentCraftingRecipe)).FirstOrDefault();
             foreach (var recipe in CraftingRecipes)
             {
                 ResultItemIndex++;

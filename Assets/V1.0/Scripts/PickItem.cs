@@ -6,17 +6,12 @@ public class PickItem : MonoBehaviour, IPickable
     private CraftingItem item;
     private void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = item.ItemIcon;
+        GetComponent<SpriteRenderer>().sprite = item.ItemIcon;
     }
     public void Pick()
     {
         CraftingItem addedItem = InventoryManager.Instance.AddItemToInventory(item);
-        if (addedItem != null)
-        { 
-            UIManager.Instance.OnItemPicked(addedItem);
-            Destroy(gameObject);
-        }
+        if (addedItem != null) Destroy(gameObject);    
     }
 
 }

@@ -14,11 +14,11 @@ public class PlayerController : MonoBehaviour
 	{
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        AnimatePlayer();
         Move();
 	}
     private void Move()
     {
+        AnimatePlayer();
         Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f);
         movement = movement.normalized;
         transform.position += movement * player.moveSpeed * Time.deltaTime;

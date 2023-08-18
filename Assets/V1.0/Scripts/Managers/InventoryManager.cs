@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     public CraftingItem AddItemToInventory(CraftingItem item)
     {
-        if (inventory.Items.Count >= inventoryCapacity) return item;
+        if (inventory.Items.Count >= inventoryCapacity) return null;
         inventory.Items.Add(item);
         if (!inventory.InventoryItemsCount.ContainsKey(item.ItemName))
         {
@@ -26,6 +27,7 @@ public class InventoryManager : MonoBehaviour
             inventory.InventoryItemsCount.Add(item.ItemName, newItemsList);
         }
         else inventory.InventoryItemsCount[item.ItemName].Add(item);
+        UIManager.Instance.OnItemPicked(item);
         return item;
     }
 }
